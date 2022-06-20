@@ -1,11 +1,11 @@
 import 'dart:developer';
 
-import 'package:syslab_admin/service/Notification/handleLocalNotification.dart';
+// import 'package:syslab_admin/service/Notification/handleLocalNotification.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/widgets/buttonsWidget.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:syslab_admin/service/Notification/handleFirebaseNotification.dart';
+// import 'package:syslab_admin/service/Notification/handleFirebaseNotification.dart';
 import 'package:syslab_admin/service/readData.dart';
 import 'package:syslab_admin/utilities/clipPath.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -167,19 +167,17 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         const SizedBox(height: 60),
-        ClipOval(
-          child: Image.asset(
-            "assets/images/p2m.png",
-            height: 100,
-            fit: BoxFit.fill,
-          ),
+        Image.asset(
+          "assets/images/image1.png",
+          height: 180,
+          fit: BoxFit.fill,
         ),
-        const SizedBox(height: 10),
-        const Text(
-          "Admin App",
-          style: TextStyle(
-              fontFamily: 'OpenSans-Bold', fontSize: 20.0, color: Colors.white),
-        )
+        // const SizedBox(height: 15),
+        // const Text(
+        //   "Admin App",
+        //   style: TextStyle(
+        //       fontFamily: 'OpenSans-Bold', fontSize: 25.0, color: Colors.white),
+        // )
       ],
     );
   }

@@ -1,4 +1,6 @@
-import 'package:syslab_admin/service/drProfileService.dart';
+// import 'package:syslab_admin/service/drProfileService.dart';
+import 'dart:developer';
+
 import 'package:syslab_admin/widgets/buttonsWidget.dart';
 import 'package:syslab_admin/widgets/loadingIndicator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -81,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                     await FirebaseAuth.instance
                         .sendPasswordResetEmail(email: _userIdController.text)
                         .then((value) {
-                      print("link sent");
+                      log("link sent");
                       setState(() {
                         _isEmailVerificationSend = false;
                         ToastMsg.showToastMsg(
@@ -89,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                       });
                     });
                   } on FirebaseAuthException catch (e) {
-                    ToastMsg.showToastMsg("${e.message}");
+                    ToastMsg.showToastMsg(e.message);
                     setState(() {
                       _isEmailVerificationSend = false;
                     });
@@ -107,22 +109,21 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _userIdField() {
+    
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
       child: TextFormField(
         cursorColor: primaryColor,
         controller: _userIdController,
         validator: (item) {
-          Pattern pattern =
-              r"^[a-zA-Z0-9.#$%&'*+/=^_`{|}~-]+@[a-zA-Z0-9](:[a-zA-Z0-9-]"
-              r"{0,253}[a-zA-Z0-9])(:\.[a-zA-Z0-9](:[a-zA-Z0-9-]"
-              r"{0,253}[a-zA-Z0-9]))*$";
-
-          RegExp regex = RegExp(pattern.toString());
-          if (regex.hasMatch(item) || item == null)
+          Pattern pattern =r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+          
+          RegExp regex = RegExp(pattern);
+          if (!regex.hasMatch(item) || item == null) {
             return 'Enter a valid email address';
-          else
+          } else {
             return null;
+          }
           // return item.contains('@')  null : "Enter correct email";
         },
         keyboardType: TextInputType.emailAddress,
@@ -130,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
             prefixIcon: const Icon(
               Icons.person,
             ),
-            labelText: "User Id",
+            labelText: "User email",
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Theme.of(context).dividerColor),
             ),
@@ -168,19 +169,17 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _adminImage() {
-    return ClipOval(
-      child: Image.asset(
-        "assets/images/p2m.png",
-        height: 100,
-        fit: BoxFit.fill,
-      ),
+    return Image.asset(
+      "assets/images/image1.png",
+      height: 100,
+      fit: BoxFit.fill,
     );
   }
 
   Widget _cardContent() {
     return Container(
       decoration:
-          const BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(20))),
+          const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20))),
       height: 250,
       width: double.infinity,
       child: Padding(
@@ -227,11 +226,13 @@ class _LoginPageState extends State<LoginPage> {
           _userIdController.text, _passwordController.text);
       if (res) {
         final FirebaseAuth auth = FirebaseAuth.instance;
-       await setData(auth.currentUser.uid);
-        // ToastMsg.showToastMsg("Logged in");
+      //  await setData(auth.currentUser.uid);
+        ToastMsg.showToastMsg("Logged in");
       } 
-      // else
-      //   ToastMsg.showToastMsg("Smoothing went wrong");
+      else {
+        
+        ToastMsg.showToastMsg("Smoothing went wrong");
+      }
 
       setState(() {
         _isLoading = false;
@@ -239,8 +240,8 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
   //
-  setData(uId) async {
-    final fcm = await FirebaseMessaging.instance.getToken();
-    await DrProfileService.updateFcmId(uId, fcm);
-  }
+  // setData(uId) async {
+  //   final fcm = await FirebaseMessaging.instance.getToken();
+  //   await DrProfileService.updateFcmId(uId, fcm);
+  // }
 }

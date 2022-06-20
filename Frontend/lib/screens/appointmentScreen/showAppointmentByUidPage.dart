@@ -11,7 +11,7 @@ import 'package:syslab_admin/utilities/fontStyle.dart';
 class ShowAppointmentByUidPage extends StatefulWidget {
   final userId;
 
-  const ShowAppointmentByUidPage({key key, this.userId}) : super(key: key);
+  const ShowAppointmentByUidPage({Key key, this.userId}) : super(key: key);
   @override
   _ShowAppointmentByUidPageState createState() =>
       _ShowAppointmentByUidPageState();

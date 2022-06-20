@@ -26,7 +26,7 @@ class PrescriptionService {
       return []; //if any error occurs then it return a blank list
     }
   }
-  static Future<List<PrescriptionModel>> getDataByApId({String appointmentId,required String uid}) async {
+  static Future<List<PrescriptionModel>> getDataByApId({String appointmentId, String uid}) async {
     print(appointmentId);
     print(uid);
 

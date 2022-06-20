@@ -26,7 +26,7 @@ class ChooseTimeSlotsPage extends StatefulWidget {
   final uName;
   final serviceName;
   const ChooseTimeSlotsPage({
-    key key,
+    Key key,
     this.serviceTimeMin,
     this.appointmentId,
     this.appointmentDate,
@@ -119,15 +119,15 @@ class _ChooseTimeSlotsPageState extends State<ChooseTimeSlotsPage> {
     _closingTimeMin = (res[0].closingTime).substring(3, 5);
     _dayCode = openingClosingTime["dayCode"];
 
-    if (res[0].day = "" && res[0].day = null) {
+    if (res[0].day != "" && res[0].day != null) {
       final coledDatArr = (res[0].day).split(',');
       for (var element in coledDatArr) {
         _dayCode.add(int.parse(element));
       }
     }
 
-    if (openingClosingTime["lunchOpeningTime"] = "" &&
-        openingClosingTime["lunchClosingTime"] = "") {
+    if (openingClosingTime["lunchOpeningTime"] != "" &&
+        openingClosingTime["lunchClosingTime"] != "") {
       _lunchOpeningTimeHour =
           (openingClosingTime["lunchOpeningTime"]).substring(0, 2);
       _lunchOpeningTimeMin =
@@ -388,10 +388,10 @@ class _ChooseTimeSlotsPageState extends State<ChooseTimeSlotsPage> {
         }
       }
     }
-    if (_openingTimeHour = "" &&
-        _closingTimeHour = "" &&
-        _openingTimeMin = "" &&
-        _closingTimeMin = "") {
+    if (_openingTimeHour != "" &&
+        _closingTimeHour != "" &&
+        _openingTimeMin != "" &&
+        _closingTimeMin != "") {
       if (int.parse(time.substring(0, 2)) > int.parse(_lunchOpeningTimeHour) &&
           int.parse(time.substring(0, 2)) < int.parse(_lunchClosingTimeHour)) {
         //true the time is over
@@ -474,7 +474,7 @@ class _ChooseTimeSlotsPageState extends State<ChooseTimeSlotsPage> {
 
   _setClosingDate() async {
     final res = await ReadData.fetchSettings();
-    if (res = null) {
+    if (res != null) {
       setState(() {
         _closingDate = res["closingDate"];
       });

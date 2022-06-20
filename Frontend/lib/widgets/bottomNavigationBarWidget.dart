@@ -5,7 +5,7 @@ class BottomNavBarWidget extends StatelessWidget {
   final String title;
   final bool isEnableBtn;
   final onPressed;
-  const BottomNavBarWidget({required this.title, required this.isEnableBtn, this.onPressed});
+  const BottomNavBarWidget({ this.title,  this.isEnableBtn, this.onPressed});
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -28,7 +28,7 @@ class BottomNavBarWidget extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                           ))),
-                  onPressed: isEnableBtn  onPressed : null),
+                  onPressed: isEnableBtn ? onPressed : null),
             )));
   }
 }
@@ -40,11 +40,11 @@ class BottomNavTwoBarWidget extends StatelessWidget {
   final String secondTitle;
   final secondBtnOnPressed;
   BottomNavTwoBarWidget(
-      {required this.firstTitle,
+      { this.firstTitle,
       this.firstBtnOnPressed,
-      required this.secondTitle,
+       this.secondTitle,
       this.secondBtnOnPressed,
-      required this.isenableBtn});
+       this.isenableBtn});
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -70,7 +70,7 @@ class BottomNavTwoBarWidget extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.white,
                                 ))),
-                        onPressed: isenableBtn  firstBtnOnPressed : null),
+                        onPressed: isenableBtn ? firstBtnOnPressed : null),
                   ),
                   SizedBox(
                     width: 10,
@@ -87,7 +87,7 @@ class BottomNavTwoBarWidget extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.white,
                                 ))),
-                        onPressed: isenableBtn  secondBtnOnPressed : null),
+                        onPressed: isenableBtn ? secondBtnOnPressed : null),
                   ),
                 ],
               ),

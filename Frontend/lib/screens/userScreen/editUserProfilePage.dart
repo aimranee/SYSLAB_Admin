@@ -19,7 +19,7 @@ import 'package:syslab_admin/utilities///ToastMsg.dart';
 class EditUserProfilePage extends StatefulWidget {
   final userDetails; //QueryDocumentSnapshot
 
-  const EditUserProfilePage({Key? key, this.userDetails}) : super(key: key);
+  const EditUserProfilePage({Key key, this.userDetails}) : super(key: key);
   @override
   _EditUserProfilePageState createState() => _EditUserProfilePageState();
 }
@@ -126,7 +126,7 @@ class _EditUserProfilePageState extends State<EditUserProfilePage> {
   }
 
   _handleUpdate() {
-    if (_formKey.currentState!.validate()) {
+    if (_formKey.currentState.validate()) {
       if (_selectedGender == "" || _selectedGender == null) {
         //ToastMsg.showToastMsg("Please select gender");
       } else {
@@ -376,7 +376,7 @@ class _EditUserProfilePageState extends State<EditUserProfilePage> {
         onChanged: (String value) {
           setState(() {
             print(value);
-            _selectedGender = value!;
+            _selectedGender = value;
           });
         },
       ),

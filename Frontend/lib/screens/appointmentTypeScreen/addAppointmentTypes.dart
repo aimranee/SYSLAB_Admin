@@ -18,7 +18,7 @@ class AddAppointmentTypesPage extends StatefulWidget {
   final disableStartTime;
   final disableEndTime; //QueryDocumentSnapshot
   const AddAppointmentTypesPage({
-    key key,
+    Key key,
     this.disableStartTime,
     this.disableEndTime,
   }) : super(key: key);
@@ -247,7 +247,7 @@ class _AddAppointmentTypesPageState extends State<AddAppointmentTypesPage> {
   // }
 
   _handleUpload() {
-    if (_formKey.currentState.validate() && _timeTakesController.text = "0") {
+    if (_formKey.currentState.validate() && _timeTakesController.text != "0") {
       setState(() {
         _isEnableBtn = false;
         _isLoading = true;
@@ -308,7 +308,7 @@ class _AddAppointmentTypesPageState extends State<AddAppointmentTypesPage> {
         closingTime: _closingTimeController.text,
         day: day);
     final res = await AppointmentTypeService.addData(
-        appointmentTypeModel); //upload data with all required details
+        appointmentTypeModel); //upload data with all  details
     if (res == "success") {
       //ToastMsg.showToastMsg("Successfully Uploaded");
       Navigator.of(context).pushNamedAndRemoveUntil(

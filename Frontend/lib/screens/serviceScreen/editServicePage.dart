@@ -15,7 +15,7 @@ import 'package:syslab_admin/utilities///ToastMsg.dart';
 
 class EditServicePage extends StatefulWidget {
   final serviceDetails;
-  const EditServicePage({key key, this.serviceDetails}) : super(key: key);
+  const EditServicePage({Key key, this.serviceDetails}) : super(key: key);
 
   @override
   _EditServicePageState createState() => _EditServicePageState();
@@ -102,7 +102,7 @@ class _EditServicePageState extends State<EditServicePage> {
   }
 
   _takeConfirmation() {
-    if (_formKey.currentState!.validate()) {
+    if (_formKey.currentState.validate()) {
       DialogBoxes.confirmationBox(
           context,
           "Update",

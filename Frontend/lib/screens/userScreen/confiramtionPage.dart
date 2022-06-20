@@ -77,7 +77,7 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
     return Scaffold(
       // appBar: IAppBars.commonAppBar(context, "Confirm"),
       bottomNavigationBar: BottomNavBarWidget(
-        isEnableBtn: _isBtnDisable=="false"true:false,
+        isEnableBtn: _isBtnDisable=="false" ? true:false,
         title: "Confirm Appointment",
         onPressed: () {
           //  Service.myfb(); //if you want to add something in all documents of one collection then you can invoke this method. this is for only the developing part.
@@ -93,8 +93,8 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
               Padding(
                   padding:
                       const EdgeInsets.only(top: 20.0, left: 10, right: 10),
-                  child: _isLoading
-                       Center(child: LoadingIndicatorWidget())
+                  child: _isLoading 
+                      ? Center(child: LoadingIndicatorWidget())
                       : Center(
                           child: Container(
                               height: 250,

@@ -13,7 +13,7 @@ class RegisterPatient extends StatefulWidget {
   final setTime;
   final selectedDate;
   RegisterPatient(
-      {Key? key,
+      {Key key,
       this.userDetails,
       this.serviceTimeMin,
       this.selectedDate,

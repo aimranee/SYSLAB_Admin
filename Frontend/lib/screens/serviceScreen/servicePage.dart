@@ -11,7 +11,7 @@ import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 
 class ServicesPage extends StatefulWidget {
-  ServicesPage({key key}) : super(key: key);
+  ServicesPage({Key key}) : super(key: key);
 
   @override
   _ServicesPageState createState() => _ServicesPageState();

@@ -194,13 +194,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   Widget _descInputField(controller, labelText, maxLine) {
     return InputFields.commonInputField(controller, labelText, (item) {
-      return item.length > 0  null : "Enter description";
+      return item.length > 0 ? null : "Enter description";
     }, TextInputType.multiline, maxLine);
   }
 
   Widget _inputField(String labelText, String validatorText, controller) {
     return InputFields.commonInputField(controller, labelText, (item) {
-      return item.length > 0  null : validatorText;
+      return item.length > 0 ? null : validatorText;
     }, TextInputType.text, 1);
   }
 
@@ -223,7 +223,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget _phnNumInputField(controller, labelText) {
     return InputFields.commonInputField(controller, labelText, (item) {
       return item.length == 13
-           null
+          ? null
           : "Enter a 10 digit mobile number with country code";
     }, TextInputType.phone, 1);
   }

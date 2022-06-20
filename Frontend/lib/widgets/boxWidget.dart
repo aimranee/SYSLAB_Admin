@@ -174,7 +174,7 @@ class ECircularImageWidget extends StatelessWidget {
   final images;
   final onPressed;
   final String imageUrl;
-  ECircularImageWidget({this.onPressed, this.images, required this.imageUrl});
+  ECircularImageWidget({this.onPressed, this.images,  this.imageUrl});
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -220,7 +220,7 @@ class ERectImageWidget extends StatelessWidget {
   final images;
   final onPressed;
   final String imageUrl;
-  ERectImageWidget({this.onPressed, this.images, required this.imageUrl});
+  ERectImageWidget({this.onPressed, this.images,  this.imageUrl});
   @override
   Widget build(BuildContext context) {
     return Center(

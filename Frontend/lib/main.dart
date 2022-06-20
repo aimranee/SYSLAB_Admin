@@ -7,14 +7,14 @@ import 'package:syslab_admin/screens/settingScreen/editSettingPage.dart';
 import 'package:syslab_admin/screens/userScreen/registerPatientPage.dart';
 import 'package:syslab_admin/screens/userScreen/userLsitPage.dart';
 import 'package:flutter/material.dart';
-// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
-import 'package:syslab_admin/notificationScreen/notificationDetailsPage.dart';
-import 'package:syslab_admin/notificationScreen/notificationListPage.dart';
-import 'package:syslab_admin/notificationScreen/sendNotificationPage.dart';
-import 'package:syslab_admin/notificationScreen/sendNotificationToAllUserPage.dart';
-import 'package:syslab_admin/notificationScreen/usersListForNotificationPage.dart';
-import 'package:syslab_admin/screens/editBannerImagesPage.dart';
+// import 'package:syslab_admin/notificationScreen/notificationDetailsPage.dart';
+// import 'package:syslab_admin/notificationScreen/notificationListPage.dart';
+// import 'package:syslab_admin/notificationScreen/sendNotificationPage.dart';
+// import 'package:syslab_admin/notificationScreen/sendNotificationToAllUserPage.dart';
+// import 'package:syslab_admin/notificationScreen/usersListForNotificationPage.dart';
+// import 'package:syslab_admin/screens/editBannerImagesPage.dart';
 import 'package:syslab_admin/screens/editOpeningClosingTimePage.dart';
 import 'package:syslab_admin/screens/editProfilePage.dart';
 import 'package:syslab_admin/screens/homePage.dart';
@@ -29,7 +29,7 @@ import 'package:syslab_admin/service/authService/authService.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+  await Firebase.initializeApp();
 
   // if (USE_FIRESTORE_EMULATOR) {
   //   FirebaseFirestore.instance.settings = Settings(
@@ -67,9 +67,9 @@ class _MyAppState extends State<MyApp> {
       // home: _defaultHome,
       // initialRoute: '/',
       routes: {
-        '/': (context) => EditAvailabilityPage(),
+        '/': (context) => // EditAvailabilityPage(),
 
-            // AuthService().handleAuth(),
+            AuthService().handleAuth(),
         '/AddServicePage': (context) => AddServicePage(),
         '/EditAppointmentDetailsPage': (context) => const EditAppointmentDetailsPage(),
         '/AppointmentListPage': (context) => AppointmentListPage(),

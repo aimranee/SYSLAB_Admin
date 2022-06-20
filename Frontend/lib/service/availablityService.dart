@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:syslab_admin/config.dart';
 import 'package:syslab_admin/model/availabilityModel.dart';
 import 'package:http/http.dart' as http;
@@ -15,6 +16,7 @@ class AvailabilityService {
 
   static Future<List<AvailabilityModel>> getAvailability() async {
     final response = await http.get(Uri.parse(_viewUrl));
+
     if (response.statusCode == 200) {
       List<AvailabilityModel> list = availabilityFromJson(response.body);
       return list;
@@ -24,12 +26,14 @@ class AvailabilityService {
   }
 
   static updateData(AvailabilityModel availabilityModel) async {
+    log("hhhhhhhhhhhhhh");
     final res = await http.post(Uri.parse(_updateUrl),
         body: availabilityModel.toUpdateJson());
-    print(res.body);
+    log(res.body);
     if (res.statusCode == 200) {
       return res.body;
-    } else
+    } else {
       return "error";
+    }
   }
 }

@@ -62,9 +62,9 @@ class _EditAvailabilityPageState extends State<EditAvailabilityPage> {
               key: _formKey,
               child: ListView(
                 children: [
-                  Padding(
+                  const Padding(
                       padding:
-                          const EdgeInsets.only(top: 20.0, left: 20, right: 20),
+                          EdgeInsets.only(top: 20.0, left: 20, right: 20),
                       child: Text(
                         "We are available on",
                         style: TextStyle(
@@ -74,31 +74,31 @@ class _EditAvailabilityPageState extends State<EditAvailabilityPage> {
                       )),
                   InputFields.commonInputField(_monController, "Monday",
                       (item) {
-                    return item.length > 0  null : "Enter text ";
+                    return item.length > 0 ? null : "Enter text ";
                   }, TextInputType.text, 1),
                   InputFields.commonInputField(_tueController, "Tuesday",
                       (item) {
-                    return item.length > 0  null : "Enter text ";
+                    return item.length > 0 ? null : "Enter text ";
                   }, TextInputType.text, 1),
                   InputFields.commonInputField(_wedController, "Wednesday",
                       (item) {
-                    return item.length > 0  null : "Enter text ";
+                    return item.length > 0 ? null : "Enter text ";
                   }, TextInputType.text, 1),
                   InputFields.commonInputField(_thuController, "Thursday",
                       (item) {
-                    return item.length > 0  null : "Enter text ";
+                    return item.length > 0 ? null : "Enter text ";
                   }, TextInputType.text, 1),
                   InputFields.commonInputField(_friController, "Friday",
                       (item) {
-                    return item.length > 0  null : "Enter text ";
+                    return item.length > 0 ? null : "Enter text ";
                   }, TextInputType.text, 1),
                   InputFields.commonInputField(_satController, "Saturday",
                       (item) {
-                    return item.length > 0  null : "Enter text ";
+                    return item.length > 0 ? null : "Enter text ";
                   }, TextInputType.text, 1),
                   InputFields.commonInputField(_sunController, "Sunday",
                       (item) {
-                    return item.length > 0  null : "Enter text ";
+                    return item.length > 0 ? null : "Enter text ";
                   }, TextInputType.text, 1),
                 ],
               ),
@@ -143,7 +143,7 @@ class _EditAvailabilityPageState extends State<EditAvailabilityPage> {
 
   void fetchAvailability() async {
     setState(() {
-      _isLoading = true;
+      // _isLoading = true;
     });
     final res = await AvailabilityService.getAvailability();
     setState(() {

@@ -21,7 +21,7 @@ class EditAppointmentTypes extends StatefulWidget {
   final disableEndTime;
 
   const EditAppointmentTypes(
-      {key key,
+      {Key key,
       this.appointmentTypesDetails,
       this.disableStartTime,
       this.disableEndTime})
@@ -162,7 +162,7 @@ class _EditAppointmentTypesState extends State<EditAppointmentTypes> {
 
   void _getAndSetInitialDataDay() async {
     final res = widget.appointmentTypesDetails;
-    if (res.day = "" && res.day = null) {
+    if (res.day != "" && res.day != null) {
       final closedDayArr = (res.day).split(',');
       for (var element in closedDayArr) {
         _dayCode.add(element);

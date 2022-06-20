@@ -135,7 +135,7 @@ class _AddServicePageState extends State<AddServicePage> {
         imageUrl: imageDownloadUrl,
         desc: _descInputController.text);
     final res = await ServiceService.addData(
-        serviceModel); //upload data with all required details
+        serviceModel); //upload data with all  details
     if (res == "success") {
       //ToastMsg.showToastMsg("Successfully Uploaded");
       Navigator.of(context)

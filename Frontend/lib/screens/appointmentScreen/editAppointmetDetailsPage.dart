@@ -19,7 +19,7 @@ import 'package:syslab_admin/utilities///ToastMsg.dart';
 
 class EditAppointmentDetailsPage extends StatefulWidget {
   final appointmentDetails;
-  const EditAppointmentDetailsPage({key key, this.appointmentDetails})
+  const EditAppointmentDetailsPage({Key key, this.appointmentDetails})
       : super(key: key);
   @override
   _EditAppointmentDetailsPageState createState() =>
@@ -691,7 +691,7 @@ class _EditAppointmentDetailsPageState
       },
     );
   }
-  Widget _myRadioButton({String title, int value, required Function onChanged}) {
+  Widget _myRadioButton({String title, int value,  Function onChanged}) {
     return RadioListTile(
       activeColor: btnColor,
       value: value,

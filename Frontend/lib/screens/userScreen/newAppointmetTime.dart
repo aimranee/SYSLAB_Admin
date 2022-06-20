@@ -18,13 +18,13 @@ class NewAppointmentTimePage extends StatefulWidget {
   final userDetails;
 
   const NewAppointmentTimePage(
-      {Key? key,
-      required this.openingTime,
-      required this.closingTime,
-      required this.serviceName,
-      required this.serviceTimeMin,
-      required this.closedDay,
-      required this.userDetails})
+      {Key key,
+       this.openingTime,
+       this.closingTime,
+       this.serviceName,
+       this.serviceTimeMin,
+       this.closedDay,
+       this.userDetails})
       : super(key: key);
 
   @override

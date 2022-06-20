@@ -50,7 +50,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
             : ListView(
                 children: [
                   _clinicOpeningTime == "" && _clinicClosingTime == ""
-                       Container()
+                      ? Container()
                       : Padding(
                           padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                           child: Text(
@@ -66,7 +66,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
                   SizedBox(height: 20),
                   _changeClinicTimeBtn(),
                   _lunchOpeningTime == "" && _lunchClosingTime == ""
-                       Container()
+                      ? Container()
                       : Padding(
                           padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                           child: Text(
@@ -298,7 +298,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
           case 1:
             {
               setState(() {
-                _monCheckedValue = newValue!;
+                _monCheckedValue = newValue;
                 if (newValue)
                   _dayCode.add(dayCode);
                 else
@@ -309,7 +309,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
           case 2:
             {
               setState(() {
-                _tueCheckedValue = newValue!;
+                _tueCheckedValue = newValue;
                 if (newValue)
                   _dayCode.add(dayCode);
                 else
@@ -320,7 +320,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
           case 3:
             {
               setState(() {
-                _wedCheckedValue = newValue!;
+                _wedCheckedValue = newValue;
                 if (newValue)
                   _dayCode.add(dayCode);
                 else
@@ -331,7 +331,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
           case 4:
             {
               setState(() {
-                _thuCheckedValue = newValue!;
+                _thuCheckedValue = newValue;
                 if (newValue)
                   _dayCode.add(dayCode);
                 else
@@ -342,7 +342,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
           case 5:
             {
               setState(() {
-                _friCheckedValue = newValue!;
+                _friCheckedValue = newValue;
                 if (newValue)
                   _dayCode.add(dayCode);
                 else
@@ -353,7 +353,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
           case 6:
             {
               setState(() {
-                _satCheckedValue = newValue!;
+                _satCheckedValue = newValue;
                 if (newValue)
                   _dayCode.add(dayCode);
                 else
@@ -364,7 +364,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
           case 7:
             {
               setState(() {
-                _sunCheckedValue = newValue!;
+                _sunCheckedValue = newValue;
                 if (newValue)
                   _dayCode.add(dayCode);
                 else

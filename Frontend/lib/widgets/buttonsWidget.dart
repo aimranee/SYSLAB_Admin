@@ -7,7 +7,7 @@ class LoginButtonsWidget extends StatelessWidget {
   final String title;
 
   final onPressed;
-  LoginButtonsWidget({required this.title, this.onPressed});
+  LoginButtonsWidget({ this.title, this.onPressed});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,7 +30,7 @@ class LoginButtonsWidget extends StatelessWidget {
 class MoreButtonsWidget extends StatelessWidget {
 
   final String title;
-  MoreButtonsWidget({required this.title});
+  MoreButtonsWidget({ this.title});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,7 +60,7 @@ class EditBtnWidget extends StatelessWidget {
 
   final onPressed;
 
-  EditBtnWidget({required this.title, this.onPressed});
+  EditBtnWidget({ this.title, this.onPressed});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -107,7 +107,7 @@ class DeleteButtonWidget extends StatelessWidget {
   final String title;
 
   final onPressed;
-  DeleteButtonWidget({this.onPressed, required this.title});
+  DeleteButtonWidget({this.onPressed,  this.title});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -141,7 +141,7 @@ class RoundedBtnWidget extends StatelessWidget {
   final String title;
 
   final onPressed;
-  RoundedBtnWidget({this.onPressed, required this.title});
+  RoundedBtnWidget({this.onPressed,  this.title});
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -197,7 +197,7 @@ class SearchBtnWidget extends StatelessWidget {
           Icons.search,
           color: Colors.white,
         ),
-        onPressed: isEnableBtn  onPressed : null,
+        onPressed: isEnableBtn ? onPressed : null,
       ),
     );
   }

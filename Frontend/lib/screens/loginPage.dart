@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget passwordResetBtn() {
     return TextButton(
         onPressed: _isEmailVerificationSend
-             null
+            ? null
             : () async {
                 if (_userIdController.text.contains("@")) {
                   setState(() {
@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
         obscureText: true,
         controller: _passwordController,
         validator: (item) {
-          return item.length > 0  null : "Enter password";
+          return item.isNotEmpty ? null : "Enter password";
         },
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(

@@ -8,7 +8,7 @@ class ShowPrescriptionImagePage extends StatefulWidget {
   final title;
   final imageUrls;
   final int selectedImagesIndex;
-  ShowPrescriptionImagePage({key key, this.imageUrls,this.title,this.selectedImagesIndex})
+  ShowPrescriptionImagePage({Key key, this.imageUrls,this.title,this.selectedImagesIndex})
       : super(key: key);
   @override
   _ShowPrescriptionImagePageState createState() => _ShowPrescriptionImagePageState();
@@ -63,7 +63,7 @@ class _ShowPrescriptionImagePageState extends State<ShowPrescriptionImagePage> {
                   //   // ),
                   // )
                   ),
-              widget.imageUrls.indexOf(_selectedImageUrl)= totalImg-1? Positioned.fill(
+              widget.imageUrls.indexOf(_selectedImageUrl) != totalImg-1? Positioned.fill(
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Padding(

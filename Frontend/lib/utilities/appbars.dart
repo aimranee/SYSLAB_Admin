@@ -22,7 +22,7 @@ class IAppBars {
                 stream: ReadData.fetchNotificationDotStatus(),
                 builder: (context, snapshot) {
                   return snapshot.hasData
-                       Icon(
+                      ? Icon(
                           Icons.notifications,
                           color: appBarIconColor,
                         )

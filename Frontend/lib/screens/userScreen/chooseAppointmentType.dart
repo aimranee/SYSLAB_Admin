@@ -30,14 +30,14 @@ class _ChooseTypePageState extends State<ChooseTypePage> {
     return Scaffold(
         // appBar: IAppBars.commonAppBar(context, "Types"),
         bottomNavigationBar: BottomNavBarWidget(
-          isEnableBtn: _serviceName == ""  false : true,
+          isEnableBtn: _serviceName == "" ? false : true,
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => NewAppointmentTimePage(
                   serviceName: _serviceName,
-                  serviceTimeMin: _serviceTimeMin!,
+                  serviceTimeMin: _serviceTimeMin,
                   openingTime: _openingTime,
                   closingTime: _closingTime,
                   closedDay: closedDay,
@@ -171,7 +171,7 @@ class _ChooseTypePageState extends State<ChooseTypePage> {
                   child: Align(
                       alignment: Alignment.bottomCenter,
                       child: num ==
-                              _number //if tap card value index+1 match with number value it mean user tap on the card
+                              _number ? //if tap card value index+1 match with number value it mean user tap on the card
                            Container(
                               width: double.infinity,
                               height: 40,

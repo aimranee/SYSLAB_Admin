@@ -3,7 +3,7 @@
 
 // class ImageBoxFillWidget extends StatelessWidget {
 //  final String imageUrl;
-//   ImageBoxFillWidget({required this.imageUrl});
+//   ImageBoxFillWidget({ this.imageUrl});
 //   @override
 //   Widget build(BuildContext context) {
 //     return  CachedNetworkImage(
@@ -28,7 +28,7 @@
 // }
 // class ImageBoxContainWidget extends StatelessWidget {
 //  final String imageUrl;
-//   ImageBoxContainWidget({required this.imageUrl});
+//   ImageBoxContainWidget({ this.imageUrl});
 //   @override
 //   Widget build(BuildContext context) {
 //     return      Image(

@@ -9,7 +9,7 @@ class ReadData {
         .doc(docId)
         .get()
         .then((snapshot) =>
-    {bookedTimeslots = snapshot.data()?["bookedTimeSlots"]})
+    {bookedTimeslots = snapshot.data()["bookedTimeSlots"]})
         .catchError((e) => {print(e)});
 
     return bookedTimeslots;

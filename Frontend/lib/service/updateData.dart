@@ -25,7 +25,7 @@ class UpdateData{
           res = "error";
         });
       } else {
-        bookedTimeSlots = snapshot.data()!["bookedTimeSlots"];
+        bookedTimeSlots = snapshot.data()["bookedTimeSlots"];
         bookedTimeSlots.add({
           "bookedTime": timeSlots,
           "forMin": serviceTimeMin,

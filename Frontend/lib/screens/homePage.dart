@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:syslab_admin/service/Notification/handleLocalNotification.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/widgets/buttonsWidget.dart';
@@ -16,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   ScrollController _gridScrollController = new ScrollController();
 
-  List _widgetsList = [
+  final List _widgetsList = [
     {
       "iconName": "assets/icons/appoin.svg",
       "title": "Appointments",
@@ -36,22 +38,6 @@ class _HomePageState extends State<HomePage> {
       "iconName": "assets/icons/bell.svg",
       "title": "Notification",
       "navigation": "/NotificationListPage"
-    },
-    {
-      "iconName": "assets/icons/docblog.svg",
-      "title": "Health Blog",
-      "navigation": "/BlogPostPage"
-
-    },
-    {
-      "iconName": "assets/icons/chat.svg",
-      "title": "Testimonials",
-      "navigation": "/TestimonialsPage"
-    },
-    {
-      "iconName": "assets/icons/gallery.svg",
-      "title": "Gallery",
-      "navigation": "/EditGalleryPage"
     },
     {
       "iconName": "assets/icons/timing.svg",
@@ -77,12 +63,7 @@ class _HomePageState extends State<HomePage> {
       "iconName": "assets/icons/group.svg",
       "title": "Users",
       "navigation": "/UsersListPage"
-    },
-    {
-      "iconName": "assets/icons/banner.svg",
-      "title": "Banner Image",
-      "navigation": "/EditBannerImagesPage"
-    },
+    }
   ];
 
   @override
@@ -98,7 +79,7 @@ class _HomePageState extends State<HomePage> {
 
   getMsg() async {
     final res = await FirebaseMessaging.instance.getToken();
-    print(res);
+    // log(res);
   }
 
   @override

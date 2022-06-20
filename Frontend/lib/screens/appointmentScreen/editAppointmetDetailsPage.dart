@@ -15,7 +15,8 @@ import 'package:syslab_admin/service/deleteData.dart';
 import 'package:syslab_admin/service/updateData.dart';
 import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/dialogBox.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 
 class EditAppointmentDetailsPage extends StatefulWidget {
   final appointmentDetails;
@@ -333,11 +334,11 @@ class _EditAppointmentDetailsPageState
       );
       final res=await AppointmentService.updateData(appointmentModel);
       if (res == "success") {
-        //ToastMsg.showToastMsg("Successfully Updated");
+        ToastMsg.showToastMsg("Successfully Updated");
         Navigator.of(context).pushNamedAndRemoveUntil(
             '/AppointmentListPage', ModalRoute.withName('/'));
       } else if (res == "error") {
-        //ToastMsg.showToastMsg("Something wents wrong");
+        ToastMsg.showToastMsg("Something wents wrong");
       }
       setState(() {
         _isEnableBtn = true;
@@ -415,15 +416,15 @@ class _EditAppointmentDetailsPageState
       final isUpdated=await AppointmentService.updateStatus(appointmentModel);
       if(isUpdated=="success"){
         await  _sendNotification("Rejected");
-        //ToastMsg.showToastMsg("Successfully Updated");
+        ToastMsg.showToastMsg("Successfully Updated");
         Navigator.of(context).pushNamedAndRemoveUntil(
             '/AppointmentListPage', ModalRoute.withName('/'));
       } else {
-        //ToastMsg.showToastMsg("Something went wrong");
+        ToastMsg.showToastMsg("Something went wrong");
       }
 
     } else {
-      //ToastMsg.showToastMsg("Something went wrong");
+      ToastMsg.showToastMsg("Something went wrong");
     }
     setState(() {
       _isEnableBtn = true;
@@ -450,15 +451,15 @@ class _EditAppointmentDetailsPageState
       final isUpdated=await AppointmentService.updateStatus(appointmentModel);
       if(isUpdated=="success"){
         _sendNotification("Visited");
-        //ToastMsg.showToastMsg("Successfully Updated");
+        ToastMsg.showToastMsg("Successfully Updated");
         Navigator.of(context).pushNamedAndRemoveUntil(
             '/AppointmentListPage', ModalRoute.withName('/'));
       } else {
-        //ToastMsg.showToastMsg("Something went wrong");
+        ToastMsg.showToastMsg("Something went wrong");
       }
 
     } else {
-      //ToastMsg.showToastMsg("Something went wrong");
+      ToastMsg.showToastMsg("Something went wrong");
     }
     setState(() {
       _isEnableBtn = true;
@@ -515,11 +516,11 @@ class _EditAppointmentDetailsPageState
     final res = await AppointmentService.updateStatus(appointmentModel);
     if (res == "success") {
       await  _sendNotification(status);
-      //ToastMsg.showToastMsg("Successfully Updated");
+      ToastMsg.showToastMsg("Successfully Updated");
       Navigator.of(context).pushNamedAndRemoveUntil(
           '/AppointmentListPage', ModalRoute.withName('/'));
     } else {
-      //ToastMsg.showToastMsg("Something went wrong");
+      ToastMsg.showToastMsg("Something went wrong");
     }
     setState(() {
       _isEnableBtn = true;

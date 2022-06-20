@@ -16,7 +16,8 @@ import 'package:intl/intl.dart';
 import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/utilities/dialogBox.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 
 class ChooseTimeSlotsPage extends StatefulWidget {
   final serviceTimeMin;
@@ -309,14 +310,14 @@ class _ChooseTimeSlotsPageState extends State<ChooseTimeSlotsPage> {
           await AppointmentService.updateDataResch(appointmentModel);
       if (isUpdated == "success") {
         // _sendNotification();
-        //ToastMsg.showToastMsg("Successfully Updated");
+        ToastMsg.showToastMsg("Successfully Updated");
         Navigator.of(context).pushNamedAndRemoveUntil(
             '/AppointmentListPage', ModalRoute.withName('/'));
       } else {
-        //ToastMsg.showToastMsg("Something went wrong");
+        ToastMsg.showToastMsg("Something went wrong");
       }
     } else {
-      //ToastMsg.showToastMsg("Something went wrong");
+      ToastMsg.showToastMsg("Something went wrong");
     }
     setState(() {
       _isLoading = false;

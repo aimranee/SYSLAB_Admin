@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:syslab_admin/service/readData.dart';
 import 'package:syslab_admin/service/updateData.dart';
 import 'package:syslab_admin/utilities/appbars.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 
 class EditSettingPage extends StatefulWidget {
   @override
@@ -95,9 +96,9 @@ class _EditSettingPageState extends State<EditSettingPage> {
     final res = await UpdateData.updateSettings(
         {name: value}); //update settings in firebase
     if (res == "success") {
-      //ToastMsg.showToastMsg("Successfully changed");
+      ToastMsg.showToastMsg("Successfully changed");
     } else {
-      //ToastMsg.showToastMsg("Something went wrong");
+      ToastMsg.showToastMsg("Something went wrong");
     }
     setState(() {
       _isEnableAllBtn = true;

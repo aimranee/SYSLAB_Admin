@@ -9,7 +9,8 @@
 // import 'package:syslab_admin/utilities/appbars.dart';
 // import 'package:syslab_admin/utilities/colors.dart';
 // import 'package:syslab_admin/utilities/dialogBox.dart';
-// import 'package:syslab_admin/utilities///ToastMsg.dart';
+// import 'package:syslab_admin/utilities/toastMsg.dart';
+
 
 // class SendNotificationPage extends StatefulWidget {
 //   final userDetails;
@@ -124,11 +125,11 @@
 //       await UpdateData.updateIsAnyNotification(
 //           "usersList", widget.userDetails.uId, true);
 
-//       //ToastMsg.showToastMsg("Successfully send");
+//       ToastMsg.showToastMsg("Successfully send");
 //       Navigator.of(context).pushNamedAndRemoveUntil(
 //           '/NotificationListPage', ModalRoute.withName('/'));
 //     } else {
-//       //ToastMsg.showToastMsg("Something went wrong");
+//       ToastMsg.showToastMsg("Something went wrong");
 //     }
 //     setState(() {
 //       _isEnable = true;

@@ -1,7 +1,8 @@
 import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/utilities/inputField.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 import 'package:syslab_admin/widgets/bottomNavigationBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:syslab_admin/screens/userScreen/confiramtionPage.dart';
@@ -74,7 +75,7 @@ class _RegisterPatientState extends State<RegisterPatient> {
         onPressed: () {
           if (_formKey.currentState.validate()) {
             if (_selectedGender == "Gender") {
-              //ToastMsg.showToastMsg("Please select gender");
+              ToastMsg.showToastMsg("Please select gender");
             } else {
               Navigator.push(
                 context,

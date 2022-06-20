@@ -6,7 +6,8 @@ import 'package:syslab_admin/service/updateData.dart';
 import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/utilities/dialogBox.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 import 'package:time_range_picker/time_range_picker.dart';
 
 class EditOpeningClosingTime extends StatefulWidget {
@@ -116,9 +117,9 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
     final res = await UpdateData.updateTiming(_clinicOpeningTime,
         _clinicClosingTime, _lunchOpeningTime, _lunchClosingTime, _dayCode);
     // if (res == "success")
-      //ToastMsg.showToastMsg("Successfully Updated");
+      ToastMsg.showToastMsg("Successfully Updated");
     // else
-      //ToastMsg.showToastMsg("Something wents wrong");
+      ToastMsg.showToastMsg("Something wents wrong");
     setState(() {
       _isLoading = false;
       isEnableBtn = true;
@@ -171,7 +172,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
             setState(() {
               if (result.toString().substring(17, 22) ==
                   result.toString().substring(37, 42)) {
-                //ToastMsg.showToastMsg("please select different times");
+                ToastMsg.showToastMsg("please select different times");
               } else {
                 _lunchOpeningTime = result.toString().substring(17, 22);
                 _lunchClosingTime = result.toString().substring(37, 42);
@@ -214,7 +215,7 @@ class _EditOpeningClosingTimeState extends State<EditOpeningClosingTime> {
             setState(() {
               if (result.toString().substring(17, 22) ==
                   result.toString().substring(37, 42)) {
-                //ToastMsg.showToastMsg("please select different times");
+                ToastMsg.showToastMsg("please select different times");
               } else {
                 _clinicOpeningTime = result.toString().substring(17, 22);
                 _clinicClosingTime = result.toString().substring(37, 42);

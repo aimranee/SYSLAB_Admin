@@ -1,7 +1,8 @@
 import 'package:syslab_admin/screens/appointmentScreen/editAppointmetDetailsPage.dart';
 import 'package:syslab_admin/service/appointmentService.dart';
 import 'package:syslab_admin/service/appointmentTypeService.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 import 'package:syslab_admin/widgets/bottomNavigationBarWidget.dart';
 import 'package:syslab_admin/widgets/buttonsWidget.dart';
 import 'package:syslab_admin/widgets/errorWidget.dart';
@@ -273,7 +274,7 @@ class _AppointmentListPageState extends State<AppointmentListPage> {
 
   _handleTypes(newStatus) {
     if (newStatus.length == 0) {
-      //ToastMsg.showToastMsg("please Select at least one");
+      ToastMsg.showToastMsg("please Select at least one");
     } else if (newStatus.length > 0) {
       _selectedTypes.clear();
       setState(() {
@@ -284,7 +285,7 @@ class _AppointmentListPageState extends State<AppointmentListPage> {
 
   _handleStatus(newStatus) {
     if (newStatus.length == 0) {
-      //ToastMsg.showToastMsg("please Select at least one");
+      ToastMsg.showToastMsg("please Select at least one");
     } else if (newStatus.length > 0) {
       _selectedStatus.clear();
       setState(() {

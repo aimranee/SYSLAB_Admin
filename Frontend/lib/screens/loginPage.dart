@@ -9,6 +9,8 @@ import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/utilities/toastMsg.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key key}) : super(key: key);
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -16,9 +18,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   bool _isLoading = false;
   bool _isEmailVerificationSend = false;
-  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  TextEditingController _userIdController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _userIdController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
@@ -34,13 +36,13 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              const Color(0xFF01beb2),
-              const Color(0xFF04A99E),
+              Color(0xFF01beb2),
+              Color(0xFF04A99E),
             ],
           )),
           child: Center(
@@ -50,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 _adminImage(),
-                Text(
+                const Text(
                   "Admin App",
                   style: TextStyle(
                       fontFamily: 'OpenSans-Bold',
@@ -74,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                   setState(() {
                     _isEmailVerificationSend = true;
                   });
-                  // ToastMsg.showToastMsg("Sending");
+                  ToastMsg.showToastMsg("Sending");
                   try {
                     await FirebaseAuth.instance
                         .sendPasswordResetEmail(email: _userIdController.text)
@@ -82,12 +84,12 @@ class _LoginPageState extends State<LoginPage> {
                       print("link sent");
                       setState(() {
                         _isEmailVerificationSend = false;
-                        // ToastMsg.showToastMsg(
-                        //     "verification link has been sent to ${_userIdController.text} ");
+                        ToastMsg.showToastMsg(
+                            "verification link has been sent to ${_userIdController.text} ");
                       });
                     });
                   } on FirebaseAuthException catch (e) {
-                    // ToastMsg.showToastMsg("${e.message}");
+                    ToastMsg.showToastMsg("${e.message}");
                     setState(() {
                       _isEmailVerificationSend = false;
                     });
@@ -96,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                 // else
                 //   ToastMsg.showToastMsg("Enter a valid email");
               },
-        child: Text("Forget or Reset Password",
+        child: const Text("Forget or Reset Password",
             style: TextStyle(
               fontSize: 14,
               decoration: TextDecoration.underline,
@@ -125,14 +127,14 @@ class _LoginPageState extends State<LoginPage> {
         },
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-            prefixIcon: Icon(
+            prefixIcon: const Icon(
               Icons.person,
             ),
             labelText: "User Id",
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Theme.of(context).dividerColor),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
             )),
       ),
@@ -151,14 +153,14 @@ class _LoginPageState extends State<LoginPage> {
         },
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-            prefixIcon: Icon(
+            prefixIcon: const Icon(
               Icons.lock,
             ),
             labelText: "Password",
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Theme.of(context).dividerColor),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
             )),
       ),
@@ -168,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _adminImage() {
     return ClipOval(
       child: Image.asset(
-        "assets/icons/dr.png",
+        "assets/images/p2m.png",
         height: 100,
         fit: BoxFit.fill,
       ),
@@ -178,7 +180,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _cardContent() {
     return Container(
       decoration:
-          BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20))),
+          const BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(20))),
       height: 250,
       width: double.infinity,
       child: Padding(

@@ -10,7 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/dialogBox.dart';
 import 'package:syslab_admin/utilities/imagePicker.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 
 class EditProfilePage extends StatefulWidget {
   @override
@@ -158,9 +159,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
     final res = await DrProfileService.updateData(drProfileModel);
     if (res == "success") {
-      //ToastMsg.showToastMsg("Successfully Updated");
+      ToastMsg.showToastMsg("Successfully Updated");
     } else if (res == "error") {
-      //ToastMsg.showToastMsg("Something wents wrong");
+      ToastMsg.showToastMsg("Something wents wrong");
     }
     setState(() {
       _isEnableBtn = true;
@@ -171,17 +172,17 @@ class _EditProfilePageState extends State<EditProfilePage> {
   // void _handleUploadImage() async {
   //   final res = await UploadImageService.uploadImages(_images[0]);
   //   if (res == "0")
-  //     //ToastMsg.showToastMsg(
+  //     ToastMsg.showToastMsg(
   //         "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload");
   //   else if (res == "1")
-  //     //ToastMsg.showToastMsg("Image size must be less the 1MB");
+  //     ToastMsg.showToastMsg("Image size must be less the 1MB");
   //   else if (res == "2")
-  //     //ToastMsg.showToastMsg(
+  //     ToastMsg.showToastMsg(
   //         "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload");
   //   else if (res == "3" || res == "error")
-  //     //ToastMsg.showToastMsg("Something went wrong");
+  //     ToastMsg.showToastMsg("Something went wrong");
   //   else if (res == "" || res == null)
-  //     //ToastMsg.showToastMsg("Something went wrong");
+  //     ToastMsg.showToastMsg("Something went wrong");
   //   else {
   //     await _updateDetails(res);
   //   }

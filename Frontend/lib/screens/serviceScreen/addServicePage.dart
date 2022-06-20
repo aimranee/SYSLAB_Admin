@@ -2,7 +2,8 @@ import 'package:syslab_admin/model/serviceModel.dart';
 import 'package:syslab_admin/service/serviceService.dart';
 import 'package:syslab_admin/service/uploadImageService.dart';
 import 'package:syslab_admin/utilities/inputField.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 import 'package:syslab_admin/widgets/bottomNavigationBarWidget.dart';
 import 'package:syslab_admin/widgets/boxWidget.dart';
 import 'package:syslab_admin/widgets/loadingIndicator.dart';
@@ -137,11 +138,11 @@ class _AddServicePageState extends State<AddServicePage> {
     final res = await ServiceService.addData(
         serviceModel); //upload data with all  details
     if (res == "success") {
-      //ToastMsg.showToastMsg("Successfully Uploaded");
+      ToastMsg.showToastMsg("Successfully Uploaded");
       Navigator.of(context)
           .pushNamedAndRemoveUntil('/ServicesPage', ModalRoute.withName('/'));
     } else if (res == "error") {
-      //ToastMsg.showToastMsg('Something went wrong');
+      ToastMsg.showToastMsg('Something went wrong');
     }
     setState(() {
       _isEnableBtn = true;
@@ -154,17 +155,17 @@ class _AddServicePageState extends State<AddServicePage> {
   //       _images[0]); //upload image in the database
   //   //all this error we have sated in the the php files
   //   if (res == "0")
-  //     //ToastMsg.showToastMsg(
+  //     ToastMsg.showToastMsg(
   //         "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload");
   //   else if (res == "1")
-  //     //ToastMsg.showToastMsg("Image size must be less the 1MB");
+  //     ToastMsg.showToastMsg("Image size must be less the 1MB");
   //   else if (res == "2")
-  //     //ToastMsg.showToastMsg(
+  //     ToastMsg.showToastMsg(
   //         "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload");
   //   else if (res == "3" || res == "error")
-  //     //ToastMsg.showToastMsg("Something went wrong");
+  //     ToastMsg.showToastMsg("Something went wrong");
   //   else if (res == "" || res == null)
-  //     //ToastMsg.showToastMsg("Something went wrong");
+  //     ToastMsg.showToastMsg("Something went wrong");
   //   else
   //     await _uploadData(res);
 

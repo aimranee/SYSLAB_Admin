@@ -7,7 +7,8 @@ import 'package:syslab_admin/service/updateData.dart';
 import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/utilities/fontStyle.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 import 'package:syslab_admin/widgets/bottomNavigationBarWidget.dart';
 import 'package:syslab_admin/widgets/loadingIndicator.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -234,21 +235,21 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
 
       //   if (msgAdded == "success") {
       //     await NotificationService.addDataForAdmin(notificationModelForAdmin);
-      //     //ToastMsg.showToastMsg("Successfully Booked");
+      //     ToastMsg.showToastMsg("Successfully Booked");
       //     // _handleSendNotification(widget.firstName, widget.lastName,
       //     //     widget.serviceName, widget.selectedDate, widget.setTime);
       //     // Navigator.of(context).pushNamedAndRemoveUntil(
       //     //     '/UsersListPage', ModalRoute.withName('/'));
       //   } else if (msgAdded == "error") {
-      //     //ToastMsg.showToastMsg("Something went wrong. try again");
+      //     ToastMsg.showToastMsg("Something went wrong. try again");
       //     Navigator.pop(context);
       //   }
       // } else {
-      //   //ToastMsg.showToastMsg("Something went wrong. try again");
+      //   ToastMsg.showToastMsg("Something went wrong. try again");
       //   Navigator.pop(context);
       // }
     } else {
-      //ToastMsg.showToastMsg("Something went wrong. try again");
+      ToastMsg.showToastMsg("Something went wrong. try again");
       Navigator.pop(context);
     }
 

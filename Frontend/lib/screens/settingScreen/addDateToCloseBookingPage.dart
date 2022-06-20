@@ -8,7 +8,8 @@ import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/utilities/datePicker.dart';
 import 'package:syslab_admin/utilities/dialogBox.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 
 class AddDateToCloseBookingPage extends StatefulWidget {
   @override
@@ -82,9 +83,9 @@ class _AddDateToCloseBookingPageState extends State<AddDateToCloseBookingPage> {
     });
     final res = await UpdateData.updateSettings({"closingDate": _date});
     if (res == "success") {
-      //ToastMsg.showToastMsg("Successfully updated");
+      ToastMsg.showToastMsg("Successfully updated");
     } else {
-      //ToastMsg.showToastMsg("Something went wrong");
+      ToastMsg.showToastMsg("Something went wrong");
     }
     setState(() {
       _isLoading = false;

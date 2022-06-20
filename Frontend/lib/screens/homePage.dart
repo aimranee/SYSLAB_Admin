@@ -11,28 +11,30 @@ import 'package:syslab_admin/utilities/clipPath.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  ScrollController _gridScrollController = new ScrollController();
+  final ScrollController _gridScrollController = ScrollController();
 
   final List _widgetsList = [
     {
       "iconName": "assets/icons/appoin.svg",
-      "title": "Appointments",
+      "title": "Rendez-vous",
       "navigation": "/AppointmentListPage"
     },
     {
       "iconName": "assets/icons/teeth.svg",
-      "title": "Service",
+      "title": "Analyses",
       "navigation": "/ServicesPage"
     },
     {
-      "iconName": "assets/icons/doct.svg",
-      "title": "Profile",
-      "navigation": "/EditProfilePage"
+      "iconName": "assets/icons/group.svg",
+      "title": "Users",
+      "navigation": "/UsersListPage"
     },
     {
       "iconName": "assets/icons/bell.svg",
@@ -60,9 +62,9 @@ class _HomePageState extends State<HomePage> {
       "navigation": "/EditBookingTiming"
     },
     {
-      "iconName": "assets/icons/group.svg",
-      "title": "Users",
-      "navigation": "/UsersListPage"
+      "iconName": "assets/icons/doct.svg",
+      "title": "Profile",
+      "navigation": "/EditProfilePage"
     }
   ];
 
@@ -93,7 +95,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(top: 20, right: 5, child: SignOutBtnWidget()),
           Positioned(
-              top: 200,
+              top: 300,
               left: 10,
               right: 10,
               bottom: 10,
@@ -131,10 +133,10 @@ class _HomePageState extends State<HomePage> {
                         child: SvgPicture.asset(_widgetsList[index]["iconName"],
                             semanticsLabel: 'Acme Logo'),
                       ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   _widgetsList[index]["title"],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: 'OpenSans-Bold',
                     fontSize: 12.0,
                   ),
@@ -164,16 +166,16 @@ class _HomePageState extends State<HomePage> {
   Widget _adminImageAndText() {
     return Column(
       children: [
-        SizedBox(height: 60),
+        const SizedBox(height: 60),
         ClipOval(
           child: Image.asset(
-            "assets/icons/dr.png",
+            "assets/images/p2m.png",
             height: 100,
             fit: BoxFit.fill,
           ),
         ),
-        SizedBox(height: 10),
-        Text(
+        const SizedBox(height: 10),
+        const Text(
           "Admin App",
           style: TextStyle(
               fontFamily: 'OpenSans-Bold', fontSize: 20.0, color: Colors.white),

@@ -11,7 +11,8 @@ import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/colors.dart';
 import 'package:syslab_admin/utilities/dialogBox.dart';
 import 'package:syslab_admin/utilities/imagePicker.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 import 'package:time_range_picker/time_range_picker.dart';
 
 class AddAppointmentTypesPage extends StatefulWidget {
@@ -265,17 +266,17 @@ class _AddAppointmentTypesPageState extends State<AddAppointmentTypesPage> {
   // _uploadImg() async {
   //   final res = await UploadImageService.uploadImages(_images[0]);
   //   if (res == "0")
-  //     //ToastMsg.showToastMsg(
+  //     ToastMsg.showToastMsg(
   //         "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload");
   //   else if (res == "1")
-  //     //ToastMsg.showToastMsg("Image size must be less the 1MB");
+  //     ToastMsg.showToastMsg("Image size must be less the 1MB");
   //   else if (res == "2")
-  //     //ToastMsg.showToastMsg(
+  //     ToastMsg.showToastMsg(
   //         "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload");
   //   else if (res == "3" || res == "error")
-  //     //ToastMsg.showToastMsg("Something went wrong");
+  //     ToastMsg.showToastMsg("Something went wrong");
   //   else if (res == "" || res == null)
-  //     //ToastMsg.showToastMsg("Something went wrong");
+  //     ToastMsg.showToastMsg("Something went wrong");
   //   else
   //     await _uploadData(res);
 
@@ -310,11 +311,11 @@ class _AddAppointmentTypesPageState extends State<AddAppointmentTypesPage> {
     final res = await AppointmentTypeService.addData(
         appointmentTypeModel); //upload data with all  details
     if (res == "success") {
-      //ToastMsg.showToastMsg("Successfully Uploaded");
+      ToastMsg.showToastMsg("Successfully Uploaded");
       Navigator.of(context).pushNamedAndRemoveUntil(
           '/AppointmentTypesPage', ModalRoute.withName('/'));
     } else if (res == "error") {
-      //ToastMsg.showToastMsg('Something went wrong');
+      ToastMsg.showToastMsg('Something went wrong');
     }
     setState(() {
       _isEnableBtn = true;
@@ -392,7 +393,7 @@ class _AddAppointmentTypesPageState extends State<AddAppointmentTypesPage> {
       setState(() {
         if (result.toString().substring(17, 22) ==
             result.toString().substring(37, 42)) {
-          //ToastMsg.showToastMsg("please select different times");
+          ToastMsg.showToastMsg("please select different times");
         } else {
           _openingTimeController.text = result.toString().substring(17, 22);
           _closingTimeController.text = result.toString().substring(37, 42);

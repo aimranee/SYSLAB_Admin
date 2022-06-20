@@ -11,7 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/dialogBox.dart';
 import 'package:syslab_admin/utilities/imagePicker.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 
 class EditServicePage extends StatefulWidget {
   final serviceDetails;
@@ -131,11 +132,11 @@ class _EditServicePageState extends State<EditServicePage> {
     });
     final res = await ServiceService.deleteData(widget.serviceDetails.id);
     if (res == "success") {
-      //ToastMsg.showToastMsg("Successfully Deleted");
+      ToastMsg.showToastMsg("Successfully Deleted");
       Navigator.of(context)
           .pushNamedAndRemoveUntil('/ServicesPage', ModalRoute.withName('/'));
     } else {
-      //ToastMsg.showToastMsg("Something went wrong");
+      ToastMsg.showToastMsg("Something went wrong");
       setState(() {
         _isLoading = false;
         _isEnableBtn = true;
@@ -184,11 +185,11 @@ class _EditServicePageState extends State<EditServicePage> {
         desc: _descInputController.text);
     final res = await ServiceService.updateData(serviceModel);
     if (res == "success") {
-      //ToastMsg.showToastMsg("Successfully Updated");
+      ToastMsg.showToastMsg("Successfully Updated");
       Navigator.of(context)
           .pushNamedAndRemoveUntil('/ServicesPage', ModalRoute.withName('/'));
     } else if (res == "error") {
-      //ToastMsg.showToastMsg("Something went wrong");
+      ToastMsg.showToastMsg("Something went wrong");
     }
     setState(() {
       _isEnableBtn = true;
@@ -220,17 +221,17 @@ class _EditServicePageState extends State<EditServicePage> {
   void _handleUploadImage() async {
     // final res = await UploadImageService.uploadImages(_images[0]);
     // if (res == "0")
-    //   //ToastMsg.showToastMsg(
+    //   ToastMsg.showToastMsg(
     //       "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload");
     // else if (res == "1")
-    //   //ToastMsg.showToastMsg("Image size must be less the 1MB");
+    //   ToastMsg.showToastMsg("Image size must be less the 1MB");
     // else if (res == "2")
-    //   //ToastMsg.showToastMsg(
+    //   ToastMsg.showToastMsg(
     //       "Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload");
     // else if (res == "3" || res == "error")
-    //   //ToastMsg.showToastMsg("Something went wrong");
+    //   ToastMsg.showToastMsg("Something went wrong");
     // else if (res == "" || res == null)
-    //   //ToastMsg.showToastMsg("Something went wrong");
+    //   ToastMsg.showToastMsg("Something went wrong");
     // else {
     //   await _updateDetails(res);
     // }

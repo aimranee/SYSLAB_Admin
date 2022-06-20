@@ -6,7 +6,8 @@ import 'package:syslab_admin/widgets/loadingIndicator.dart';
 import 'package:flutter/material.dart';
 import 'package:syslab_admin/utilities/appbars.dart';
 import 'package:syslab_admin/utilities/dialogBox.dart';
-import 'package:syslab_admin/utilities///ToastMsg.dart';
+import 'package:syslab_admin/utilities/toastMsg.dart';
+
 
 class EditAvailabilityPage extends StatefulWidget {
   @override
@@ -128,9 +129,9 @@ class _EditAvailabilityPageState extends State<EditAvailabilityPage> {
           sun: _sunController.text);
       final res = await AvailabilityService.updateData(availabilityModel);
       if (res == "success") {
-        //ToastMsg.showToastMsg("Successfully Updated");
+        ToastMsg.showToastMsg("Successfully Updated");
       } else if (res == "error") {
-        //ToastMsg.showToastMsg("Something wents wrong");
+        ToastMsg.showToastMsg("Something wents wrong");
       }
       setState(() {
         _isEnableBtn = true;

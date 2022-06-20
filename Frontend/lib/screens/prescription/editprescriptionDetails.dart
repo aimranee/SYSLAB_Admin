@@ -9,7 +9,8 @@
 // import 'package:syslab_admin/utilities/fontStyle.dart';
 // import 'package:syslab_admin/utilities/imagePicker.dart';
 // import 'package:syslab_admin/utilities/inputField.dart';
-// import 'package:syslab_admin/utilities///ToastMsg.dart';
+// import 'package:syslab_admin/utilities/toastMsg.dart';
+
 // import 'package:syslab_admin/widgets/bottomNavigationBarWidget.dart';
 // import 'package:syslab_admin/widgets/imageWidget.dart';
 // import 'package:syslab_admin/widgets/loadingIndicator.dart';
@@ -101,12 +102,12 @@
 //       );
 //       final res = await PrescriptionService.updateData(prescriptionModel);
 //       if (res == "success") {
-//         //ToastMsg.showToastMsg("Successfully updated");
+//         ToastMsg.showToastMsg("Successfully updated");
 //         Navigator.of(context).pushNamedAndRemoveUntil(
 //             '/AppointmentListPage', ModalRoute.withName('/'));
 //       }
 //       else
-//         //ToastMsg.showToastMsg("Something went wrong");
+//         ToastMsg.showToastMsg("Something went wrong");
 //     }
 //     else {
 //       await _startUploading();
@@ -129,7 +130,7 @@
 //     if (_successUploaded <= _listImages.length) {
 //       final res=await UploadImageService.uploadImages(_listImages[index]); //  represent the progress of uploading task
 //       if(res=="0"){
-//         //ToastMsg.showToastMsg("Sorry, ${_listImages[index].name} is not in format only JPG, JPEG, PNG, & GIF files are allowed to upload");
+//         ToastMsg.showToastMsg("Sorry, ${_listImages[index].name} is not in format only JPG, JPEG, PNG, & GIF files are allowed to upload");
 //         if (_successUploaded < _listImages.length) {
 //           //check more images for upload
 //           setState(() {
@@ -143,7 +144,7 @@
 //       }
 
 //       else if(res=="1")
-//       {//ToastMsg.showToastMsg("Image ${_listImages[index].name} size must be less the 1MB");
+//       {ToastMsg.showToastMsg("Image ${_listImages[index].name} size must be less the 1MB");
 //       if (_successUploaded < _listImages.length) {
 //         //check more images for upload
 //         setState(() {
@@ -157,7 +158,7 @@
 //       }
 
 //       else if(res=="2")
-//       { //ToastMsg.showToastMsg("Image ${_listImages[index].name} size must be less the 1MB");
+//       { ToastMsg.showToastMsg("Image ${_listImages[index].name} size must be less the 1MB");
 //       if (_successUploaded < _listImages.length) {
 //         //check more images for upload
 //         setState(() {
@@ -170,7 +171,7 @@
 //       }
 
 //       else if(res=="3"|| res=="error")
-//       { //ToastMsg.showToastMsg("Something went wrong");
+//       { ToastMsg.showToastMsg("Something went wrong");
 //       if (_successUploaded < _listImages.length) {
 //         //check more images for upload
 //         setState(() {
@@ -185,7 +186,7 @@
 //       }
 
 //       else if(res==""||res==null)
-//       {//ToastMsg.showToastMsg("Something went wrong");
+//       {ToastMsg.showToastMsg("Something went wrong");
 //       if (_successUploaded < _listImages.length) {
 //         //check more images for upload
 //         setState(() {
@@ -229,11 +230,11 @@
 //               );
 //               final res =await PrescriptionService.updateData(prescriptionModel);
 //               if(res=="success"){
-//                 //ToastMsg.showToastMsg("Successfully updated");
+//                 ToastMsg.showToastMsg("Successfully updated");
 //                 Navigator.of(context).pushNamedAndRemoveUntil(
 //                     '/AppointmentListPage', ModalRoute.withName('/'));
 //               }
-//               else //ToastMsg.showToastMsg("Something went wrong");
+//               else ToastMsg.showToastMsg("Something went wrong");
 //           }
 //                 }
 
@@ -331,12 +332,12 @@
 //     });
 //     final res=await PrescriptionService.deleteData(widget.prescriptionDetails.id);
 //     if(res=="success"){
-//       //ToastMsg.showToastMsg("Successfully deleted");
+//       ToastMsg.showToastMsg("Successfully deleted");
 //       Navigator.of(context).pushNamedAndRemoveUntil(
 //           '/AppointmentListPage', ModalRoute.withName('/'));
 //     }
 //     else{
-//       //ToastMsg.showToastMsg("Something went wrong");
+//       ToastMsg.showToastMsg("Something went wrong");
 
 //     }
 //     setState(() {
